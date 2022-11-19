@@ -36,6 +36,8 @@ return 0;
 
 //演示多个字符从两端移动，向中间汇集
 #include<stdio.h>
+#include<string.h>
+#include<windows.h>
 int main()
 {
   char arr1[] = "welcome to bit!!!!!!";
