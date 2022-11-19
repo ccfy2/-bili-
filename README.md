@@ -1,10 +1,10 @@
 # -bili-
-
+//在有序的数组中查找某个数字并算出它的下标
 #include<stdio.h>
 int main()
 { 
   int arr[] ={1,2,3,4,5,6,7,8,9,10,11};
-  int k = 7
+  int k = 7;
   int sz =sizeof(arr)/sizeof(arr[0]);
   int left = 0;
   int right = sz - 1;
