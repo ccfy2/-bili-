@@ -90,7 +90,52 @@ int main()
 }
 
 
+//传址--利用取地址来改变函数外部的实际参数的值
+void swap(int* pa, int* pb)
+{
+	int tmp = 0;
+	tmp = *pa;
+	*pa = *pb;
+    *pb = tmp;
+}
 
+#include<stdio.h>
+int main()
+{
+	int a =10;
+	int b =20;
+	printf("a=%d b=%d\n", a, b);
+	swap(&a,&b);
+	printf("a=%d b=%d\n", a, b);
+
+	return 0;
+}
+
+
+//打印100-200之间的素数
+int is_prime(int n)
+{
+	int j;
+	for(j=2; j<n; j++)
+	{
+		if(n%j==0)
+			return 0;
+	}
+	return 1;
+}
+
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	for(i=100; i<=200; i++)
+	{
+		if(is_prime(i) == 1)
+			printf("%d ", i);
+	}
+
+	return 0;
+}
 
 
 
