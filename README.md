@@ -1,5 +1,5 @@
 # -bili-
-//在有序的数组中查找某个数字并算出它的下标
+//在有序的数组中查找某个数字并算出它的下标--二分查找
 #include<stdio.h>
 int main()
 { 
@@ -31,6 +31,49 @@ int main()
  }
 
 return 0;
+}
+
+
+//二分查找--利用函数
+#include<stdio.h>
+int binary_search(int arr[], int k, int sz)
+{
+	int left=0;
+	int right = sz-1;
+	while(left<=right)
+	{
+		int mid = (left+right)/2;
+		if(arr[mid]<k)
+		{
+			left =mid +1;
+		}
+		else if(arr[mid]>k)
+		{
+			right = mid -1;
+		}
+		else
+		{
+			return mid;
+		}
+	}
+	return -1;
+}
+int main()
+{
+	int arr[] = {1,2,3,4,5,6,7,8,9,10};
+	int k =10;
+	int sz = sizeof(arr)/sizeof(arr[0]);
+	//函数返回值为下标 或者找不到为-1
+	int ret = binary_search(arr, k, sz);
+	if(ret == -1)
+	{
+		printf("找不到指定的数字\n");
+	}
+	else
+	{
+		printf("找到了，下标是:%d\n", ret);
+	}
+	return 0;
 }
 
 
